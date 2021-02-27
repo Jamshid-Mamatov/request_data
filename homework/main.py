@@ -36,10 +36,11 @@ def api():
 
 
 
-def database(country:str)->dict:
-    pass
+def database(region:str)->dict:
+    inform=table1.search(q.country==region)
+    print(inform)
 
-
+database("uzbekistan")
 
 app.run(debug=True)
 
