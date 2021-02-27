@@ -2,13 +2,17 @@ from flask import Flask,request
 
 app=Flask(__name__)
 
-@app.route("/form")
+@app.route("/form",methods=["GET","POST"])
 
 def get_form():
 
-    r=request.values
+    if request.method=="POST":
+        r=request.form
+        print(r)
+        a=r.get("a",0)
+        b=r.get("b",0)
+        return {"sum":a+b}
 
-    print(r)
 
     return "ok"
 
