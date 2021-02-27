@@ -9,8 +9,8 @@ def api():
     r=request.args
     print(r)
     # print(request.url)
-    a=int(r['a'])
-    b=int(r['b'])
+    a=int(r.get("a",0))
+    b=int(r.get("b",0))
 
     return {"result":a+b}
 
