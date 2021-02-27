@@ -27,9 +27,9 @@ def api():
         country=r.get("country","")
         country=country.capitalize()
         # print(r)
-
-
-        return "ok"
+        city=database(country)
+        inform=str(city)[1:-1]
+        return inform
     
     return "ok"
 
@@ -38,9 +38,9 @@ def api():
 
 def database(region:str)->dict:
     inform=table1.search(q.country==region)
-    print(inform)
+    
+    return inform
 
-database("uzbekistan")
 
 app.run(debug=True)
 
