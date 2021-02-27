@@ -2,19 +2,14 @@ from flask import Flask,request
 
 app=Flask(__name__)
 
-@app.route("/")
+@app.route("/form")
 
-def api():
+def get_form():
 
-    r=request.args
+    r=request.values
+
     print(r)
-    # print(request.url)
-    
-    a=int(r.get("a",0))
-    b=int(r.get("b",0))
 
-    for k,v in r.items():
-        print(k,v)
-    return {"result":a+b}
+    return "ok"
 
 app.run(debug=True)
